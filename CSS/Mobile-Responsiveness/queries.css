@@ -1,0 +1,89 @@
+/* LG - small laptops: 1024px - 1280px */
+
+@media (max-width: 72rem){
+    /* 1150 / 16px = 72 rem  */
+    /* 72rem X 16px = 1152 px  */
+
+    html{
+        font-size: 56.25%;
+        /* 9px / 16px = 56.25% */
+    }
+
+    .feature-grid-container{
+        column-gap: 3rem;
+    }
+
+    .cta-section{
+        margin-bottom: 20rem;
+    }
+
+}
+
+
+/* MD - tablets: 768px - 1024px  */
+
+@media (max-width: 51rem ){
+    /* 815px / 16px = 51rem */
+    /* 51rem X 16px = 816px */
+
+    html{
+        font-size: 50%;
+        /* 8px / 16px = 50% */
+    }
+
+}
+
+
+/* SM - phone landscape: 576pc 768px */
+
+@media (max-width: 43rem){
+    /* 680px / 16px = 43rem */
+    /* 43rem X 16px = 688px */
+
+    html{
+        font-size: 43.75%;
+        /* 7px / 16px = 43.75% */
+    }
+
+    .cta-card{
+        padding: 8rem 16rem;
+    }
+
+    .feature-section{
+        margin-bottom: 20rem;
+    }
+
+    .feature-grid-container{
+        row-gap: 5rem;
+        column-gap: 0.5rem;
+    }
+}
+
+/* XS - phone potrait < 576px */
+
+@media (max-width: 34rem){
+    /* 530px / 16px = 34rem  */
+    /* 34rem X 16px = 544px */
+
+    html{
+        font-size: 37.5%;
+        /* 6px / 16px = 37.5% */
+    }
+
+    .hero-paragraph{
+        text-align: center;
+    }
+
+    .hero-section{
+        height: auto;
+    }
+
+    .feature-grid-container{
+        grid-template-columns: 1fr;
+    }
+
+    .feature-image-order-swap{
+        grid-row: auto;
+        grid-column: auto;
+    }
+}
