@@ -1,0 +1,236 @@
+body{
+    background-color: #fce3a6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 20vh;
+}
+
+#pokedoxOne{
+    background-color: #fc2243;
+    width: 350px;
+    height: 520px;
+    display: block;
+    margin: auto;
+    z-index: 3;
+}
+
+#top{
+    background-color: none;
+    width: 75%;
+    display: block;
+    margin: auto;
+    height: 50%;
+    position: relative;
+    border-radius: 0;
+    z-index: 1;
+}
+
+#topSquare{
+    background: #d50625;
+    width: 55%;
+    height: 25%;
+    margin: auto;    
+    display: block;
+    z-index: 1;
+    position: absolute;
+    left: -16.5%;
+}
+
+#buttonWhite{
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    z-index: 2;
+}
+
+#buttonBlue{
+    background-color: #71cdf4;
+    width: 85%;
+    height: 85%;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 8%;
+    left: 5%;
+    z-index: 3;
+    border: 50%;
+}
+
+#topSquareTwo{
+    background-color: #d50625;
+    display: block;
+    margin: auto;
+    height: 14%;
+    width: 78%;
+    z-index: 3;
+    position: absolute;
+    left: 38%;
+}
+
+#buttonRed{
+    background-color: #fc2243;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 47%;
+    left: -35%;
+    z-index: 2;
+}
+
+#buttonGreen{
+    background-color: #58bb69;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 45%;
+    left: -25%;
+    z-index: 2;
+}
+
+#buttonYellow{
+    background-color: #ffc543;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 45%;
+    left: -15%;
+    z-index: 2;
+}
+
+#screen{
+    position: absolute;
+    background-color: #e6e6e6;
+    width: 100%;
+    height: 75%;
+    display: block;
+    margin: auto;
+    border-radius: 5%;
+    position: absolute;
+    bottom: -10%;   
+}
+
+#screenTwo{
+    position: absolute;
+    background-color: #e5f6fc;
+    width: 80%;
+    height: 75%;
+    display: block;
+    margin: auto;
+    border-radius: 5%;
+    position: absolute;
+    bottom: 12%;
+    right: 10%;   
+}
+
+#bottom{
+    width: 100%;
+    height: 50%;
+    display: block;
+    margin:  auto;
+    border-radius: 5%;
+    position: relative;
+}
+
+#start{
+    background-color: #f07147;
+    cursor: pointer;
+    width: 15%;
+    height: 8%;
+    display: block;
+    margin: 10px auto;
+    position: absolute;
+    left: 48%;
+    top: 30%;
+    border-radius: 30px;    
+}
+
+#select{
+    background-color: #58bb69;
+    cursor: pointer;
+    width: 15%;
+    height: 8%;
+    display: block;
+    margin: 10px auto;
+    position: absolute;
+    left: 30%;
+    top: 30%;
+    border-radius: 30px; 
+    z-index: 2;   
+}
+
+#buttonBlueTwo{
+    background-color: #1697f9;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: 10px auto;
+    position: absolute;
+    left: 8%;
+    top: 25%;
+    border-radius: 50%; 
+    z-index: 2;   
+}
+
+#buttonYellowTwo{
+    background-color: #ffcf54;
+    cursor: pointer;
+    width: 46%;
+    height: 46px;
+    display: block;
+    margin: 10px auto;
+    position: absolute;
+    left: 22%;
+    top: 57%;
+    border-radius: 10px; 
+    z-index: 2;   
+}
+
+
+#dpadHorizontal{
+    cursor: pointer;
+    background-color: #404040;
+    height: 80px;
+    width: 23px;
+    display: block;
+    position: absolute;
+    top: 32%;
+    right: 16%;
+}
+
+#dpadVertical{
+    cursor: pointer;
+    background-color: #404040;
+    height: 23px;
+    width: 80px;
+    display: block;
+    position: absolute;
+    top: 42%;
+    right: 8%;
+}
+
+#pokemonImg{
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+}
+
