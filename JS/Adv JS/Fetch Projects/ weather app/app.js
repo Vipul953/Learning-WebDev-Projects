@@ -39,8 +39,8 @@ const getWeatherData = async (city='London') => {
 
         //update UI
         place.innerHTML =  `${weatherData.name},${weatherData.sys.country}`
-        weatherImg.innerHTML = `<img src="https://openweathermap.org/img/wn/${city}weather"/>`
         weather.innerHTML = `${weatherData.weather[0].main}`
+        weatherImg.innerHTML = `<img src="https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png/>`
         temp.innerHTML = `${Math.round(weatherData.main.temp)}°C`
         highTemp.innerHTML = `High: ${Math.round(weatherData.main.temp_max)}°C`
         lowTemp.innerHTML = `Low: ${Math.round(weatherData.main.temp_min)}°C`
