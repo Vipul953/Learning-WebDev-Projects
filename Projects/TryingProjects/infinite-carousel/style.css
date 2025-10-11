@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.carousel{
+    width: 100px;
+    height: 100px;
+    background: black;
+    
+}
+
+.carousel-inner{
+    width: 100%;
+    height: 100%;
+    background: red;
+}
