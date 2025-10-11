@@ -1,0 +1,105 @@
+/* General styling (keep previous) */
+body {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  background: white;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  text-align: center;
+}
+
+h1 { margin-bottom: 20px; color: #333; }
+
+.input-section {
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #66a6ff;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus { border-color: #0055ff; }
+
+button {
+  background: #66a6ff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+button:hover { background: #0055ff; }
+
+/* Task list */
+ul {
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+  text-align: left;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background: #f4f4f4;
+  transition: background 0.3s, color 0.3s;
+}
+
+li.completed {
+  text-decoration: line-through;
+  color: gray;
+  background: #d9f7be;
+}
+
+/* Toggle button styling */
+li button.toggle-btn {
+  background: #28a745; /* green */
+  color: white;
+  border-radius: 6px;
+  padding: 5px 10px;
+  margin-left: 5px;
+  transition: background 0.3s;
+}
+
+li button.toggle-btn:hover { background: #1e7e34; }
+
+/* Delete button styling */
+li button.delete-btn {
+  background: #dc3545; /* red */
+  color: white;
+  border-radius: 6px;
+  padding: 5px 10px;
+  margin-left: 5px;
+  transition: background 0.3s;
+}
+
+li button.delete-btn:hover { background: #a71d2a; }
+
+/* Optional: add ✅ icon */
+li.completed::before {
+  content: "✅ ";
+  margin-right: 5px;
+}
