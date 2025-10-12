@@ -1,10 +1,18 @@
-const express = require("express");
+import express from "express";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
+
 const app = express();
 
+// Fix __dirname in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
+// Middleware
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(join(__dirname, "public")));
 
+// In-memory tasks
 let tasks = [
   { id: 1, title: "Learn Express", completed: false },
   { id: 2, title: "Build a project", completed: false },
@@ -14,7 +22,6 @@ let tasks = [
 app.get("/tasks", (req, res) => {
   res.json(tasks);
 });
-
 
 // POST a new task
 app.post("/tasks", (req, res) => {
@@ -45,10 +52,12 @@ app.delete("/tasks/:id", (req, res) => {
   res.json({ message: "Task deleted" });
 });
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+// ✅ FIX: Use a wildcard *regex route instead of "*"
+app.get(/.*/, (req, res) => {
+  res.sendFile(join(__dirname, "public", "index.html"));
 });
 
+// Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () =>
   console.log(`✅ Server running at http://localhost:${PORT}`)
