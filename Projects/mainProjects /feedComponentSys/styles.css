@@ -3,8 +3,10 @@
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   max-width: 300px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .card-image {
@@ -32,9 +34,8 @@
 }
 
 #feed {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  /* Layout styles will be applied dynamically */
+  padding: 10px;
 }
 
 button {
@@ -56,4 +57,12 @@ button:disabled {
   margin: 10px;
   padding: 10px;
   width: 200px;
+}
+
+.layout-selector {
+  margin: 10px;
+}
+
+.layout-selector select {
+  padding: 5px;
 }

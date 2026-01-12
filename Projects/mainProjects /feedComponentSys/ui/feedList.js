@@ -1,12 +1,20 @@
+import { applyLayout } from "./layouts.js";
+
 export function createFeedList({
   container,
   dataProvider,
   mapper,
   createCard,
+  layout = "flexWrap",
 }) {
+  let currentLayout = layout;
+
   function render() {
     const state = dataProvider.getState();
     container.innerHTML = "";
+
+    // Apply the layout
+    applyLayout(container, currentLayout);
 
     if (state.loading && state.data.length === 0) {
       container.textContent = "Loading...";
@@ -40,5 +48,11 @@ export function createFeedList({
   const unsubscribe = dataProvider.subscribe(render);
   render();
 
-  return { destroy: unsubscribe };
+  return {
+    destroy: unsubscribe,
+    setLayout: (newLayout) => {
+      currentLayout = newLayout;
+      render();
+    },
+  };
 }
