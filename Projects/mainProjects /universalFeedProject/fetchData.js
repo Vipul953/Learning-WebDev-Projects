@@ -1,13 +1,24 @@
 import { manageDataProvider } from "./manageDataProvider.js";
+import { universalFetcher } from "./universalFetcher.js";
 
-const fetchData = async () => {
-  const res = await fetch("https://dummyjson.com/products");
-  const data = await res.json();
-  return data.products;
+const config = {
+  dataKey: "products",
+  cursorParam: "skip",
+  initialCursor: 0,
+  deriveNextCursor: (json) =>
+    json.skip + json.limit < json.total ? json.skip + json.limit : null,
+};
+
+const fetchData = async (currentCursor) => {
+  const result = await universalFetcher(
+    "https://dummyjson.com/products?limit=10",
+    currentCursor,
+    config
+  );
+  return result;
 };
 
 (async () => {
   const dataProvider = await manageDataProvider(fetchData);
   console.log(dataProvider);
 })();
-

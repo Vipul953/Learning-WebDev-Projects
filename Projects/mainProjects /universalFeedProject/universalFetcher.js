@@ -1,5 +1,5 @@
 
-async function universalFetcher (url, currentCursor, config){
+export async function universalFetcher (url, currentCursor, config){
 
     const seperator = url.includes('?') ? '&' : '?'
     const finalUrl = `${url}${seperator}${config.cursorParam}=${currentCursor || config.initialCursor}`
@@ -27,9 +27,9 @@ async function universalFetcher (url, currentCursor, config){
             nextCursor: null,
             hasMore: false
         }      
-    }
-    
+    }   
 }
+
 
 
 // example of different pagination configs
@@ -41,7 +41,7 @@ const pageConfig = {
 }
 
 const offsetConfig = {
-  dataKey: "items",
+  dataKey: "items" || "products",
   cursorParam: "skip",
   initialCursor: 0,
   deriveNextCursor: (json) =>
