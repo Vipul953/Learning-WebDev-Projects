@@ -3,34 +3,32 @@ export async function manageDataProvider(fetchFn) {
     data: [],
     loading: false,
     error: null,
-  };
-
-  async function loadData() {
-    state.loading = true;
-    state.data = []; // Reset data for fresh load
-
-    let currentCursor = null;
+    hasMore: true 
+  }
+  const currentCursor = null
+  async function loadMore(currentCursor){ 
+    if (state.loading || !state.hasMore) return
+    state.loading = true
 
     try {
-      while (true) {
-        const result = await fetchFn(currentCursor);
-        state.data = state.data.concat(result.data);
-
-        if (!result.hasMore) break;
-        currentCursor = result.nextCursor;
-      }
-
-      state.error = null;
+      const result = await fetchFn(currentCursor);
+      state.data = [...state.data, ...result.data];
+      currentCursor = result.nextCursor;
+      state.hasMore = result.hasMore;
+      state.error = null;  
     } catch (error) {
-      console.error(`Error is: ${error}`);
-      state.data = [];
-      state.error = error;
+      console.error(`Error is: ${error}`)
+      state.data = []
+      state.error = error  
     }
-
-    state.loading = false;
-    return state;
+    state.loading = false 
   }
 
-  await loadData();
-  return state;
+  return {
+    data: state.data,
+    loading: state.loading,
+    error: state.error,
+    loadMore,
+    hasMore: state.hasMore
+  }
 }
