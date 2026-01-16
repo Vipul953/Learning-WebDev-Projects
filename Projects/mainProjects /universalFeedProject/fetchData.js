@@ -20,5 +20,6 @@ const fetchData = async (currentCursor) => {
 
 (async () => {
   const dataProvider = await manageDataProvider(fetchData);
+  await dataProvider.loadMore() // Load First batch
   console.log(dataProvider);
 })();
